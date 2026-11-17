@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Old Is Your Mind? A Practical Guide to the Mental Age Test</title>
+<meta name="description" content="Your birthday says one thing, your mind may say another. Learn what a mental age test checks, the signs of a younger or older mind, and how to use your result.">
+<style>
+  :root{
+    --ink:#17202a;--muted:#5a6672;--line:#e3e8ec;--bg:#ffffff;--page:#f3f6f7;
+    --teal:#0f766e;--teal-dark:#0b5a54;--teal-soft:#e6f4f2;--amber:#b45309;--amber-soft:#fef5e7;--rose:#be123c;--rose-soft:#fdecef;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--page);color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:18px;line-height:1.75}
+  a{color:var(--teal);font-weight:600;text-underline-offset:3px}
+  a:hover{color:var(--teal-dark)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  header.top{background:var(--bg);border-bottom:1px solid var(--line);padding:52px 0 40px}
+  .kicker{color:var(--teal);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px}
+  header.top h1{font-size:clamp(30px,5vw,42px);line-height:1.18;margin:0 0 16px;letter-spacing:-.02em}
+  .sub{font-size:19px;color:var(--muted);margin:0 0 22px}
+  .byline{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{font-size:13.5px;background:var(--page);border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--muted)}
+
+  main{background:var(--bg);margin:28px auto 48px;border-radius:16px;border:1px solid var(--line);padding:40px 44px}
+  h2{font-size:27px;line-height:1.25;margin:52px 0 14px;letter-spacing:-.01em;scroll-margin-top:20px}
+  h2:first-of-type{margin-top:8px}
+  h3{font-size:20px;margin:28px 0 8px}
+  p{margin:0 0 18px}
+  ul,ol{padding-left:22px;margin:0 0 20px}
+  li{margin-bottom:8px}
+
+  .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:0 0 30px}
+  .summary div{background:var(--teal-soft);border-radius:12px;padding:16px 18px}
+  .summary b{display:block;font-size:26px;color:var(--teal-dark);line-height:1.2}
+  .summary span{font-size:15px;color:var(--muted)}
+
+  .jump{border-left:3px solid var(--teal);padding:4px 0 4px 18px;margin:0 0 34px}
+  .jump p{font-weight:700;margin:0 0 6px;font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .jump ol{margin:0;font-size:16.5px}
+  .jump a{font-weight:500;color:var(--ink);text-decoration:none}
+  .jump a:hover{color:var(--teal)}
+
+  blockquote{margin:26px 0;padding:18px 24px;background:var(--page);border-radius:12px;font-size:20px;line-height:1.55;font-style:italic;color:#2b3640}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+  .col{border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .col h3{margin:0 0 10px;font-size:18px}
+  .col ul{margin:0;padding-left:18px;font-size:16px}
+  .col.y{border-top:4px solid var(--teal)}
+  .col.o{border-top:4px solid var(--amber)}
+
+  .timeline{position:relative;margin:24px 0;padding-left:28px;border-left:2px solid var(--line)}
+  .timeline .item{position:relative;margin-bottom:22px}
+  .timeline .item::before{content:"";position:absolute;left:-36px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--teal);border:3px solid var(--teal-soft)}
+  .timeline .yr{font-weight:800;color:var(--teal-dark);font-size:15px;letter-spacing:.03em}
+  .timeline p{margin:2px 0 0;font-size:16.5px}
+
+  .eq{text-align:center;background:var(--teal-dark);color:#fff;border-radius:12px;padding:18px;font-family:Consolas,Menlo,monospace;font-size:19px;margin:20px 0}
+
+  .check{list-style:none;padding:0}
+  .check li{position:relative;padding:12px 16px 12px 48px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:17px}
+  .check li::before{content:"✓";position:absolute;left:16px;top:12px;width:22px;height:22px;border-radius:6px;background:var(--teal-soft);color:var(--teal);font-weight:800;text-align:center;line-height:22px;font-size:14px}
+
+  .band{border-radius:14px;padding:20px 22px;margin-bottom:14px}
+  .band h3{margin:0 0 6px;font-size:19px}
+  .band p{margin:0;font-size:16.5px}
+  .band .lbl{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+  .b1{background:var(--teal-soft)} .b1 .lbl{color:var(--teal)}
+  .b2{background:#eef2f6} .b2 .lbl{color:#475569}
+  .b3{background:var(--amber-soft)} .b3 .lbl{color:var(--amber)}
+
+  .myth{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px}
+  .myth div{padding:14px 18px;font-size:16px}
+  .myth .m{background:var(--rose-soft)}
+  .myth .f{background:#fff}
+  .myth b{display:block;font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+  .myth .m b{color:var(--rose)} .myth .f b{color:var(--teal)}
+
+  .action{background:linear-gradient(120deg,#0f766e,#14958a);color:#fff;border-radius:16px;padding:30px;margin:38px 0;text-align:center}
+  .action h3{margin:0 0 6px;font-size:23px;color:#fff}
+  .action p{margin:0 0 18px;opacity:.9}
+  .action a{display:inline-block;background:#fff;color:var(--teal-dark);text-decoration:none;font-weight:800;padding:13px 26px;border-radius:10px;transition:transform .15s}
+  .action a:hover{transform:translateY(-2px)}
+
+  .qa details{border-bottom:1px solid var(--line)}
+  .qa summary{cursor:pointer;padding:16px 0;font-weight:700;font-size:17.5px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary::after{content:"›";transform:rotate(90deg);color:var(--teal);font-size:24px;line-height:1;transition:transform .2s}
+  .qa details[open] summary::after{transform:rotate(-90deg)}
+  .qa .ans{padding:0 0 14px;font-size:16.5px;color:#2b3640}
+
+  .fine{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+
+  @media (max-width:640px){
+    body{font-size:17px}
+    main{padding:26px 20px;border-radius:12px}
+    .split,.myth{grid-template-columns:1fr}
+    h2{font-size:23px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="kicker">Mind &amp; Personality</p>
+    <h1>How Old Is Your Mind? A Practical Guide to the Mental Age Test</h1>
+    <p class="sub">Your passport gives one age. Your habits, choices and reactions may give another. Here is how to find that second number and what to do with it.</p>
+    <div class="byline"><span class="pill">8 min read</span><span class="pill">Beginner friendly</span><span class="pill">November 2026</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+<article>
+
+  <div class="summary">
+    <div><b>1905</b><span>The year the first age-based intelligence scale was published</span></div>
+    <div><b>2 types</b><span>Clinical tests and lifestyle quizzes, which measure very different things</span></div>
+    <div><b>0 right answers</b><span>A younger or older mind is not better or worse</span></div>
+  </div>
+
+  <nav class="jump">
+    <p>In this guide</p>
+    <ol>
+      <li><a href="#two-ages">The two ages you carry</a></li>
+      <li><a href="#signs">Signs of a younger or older mind</a></li>
+      <li><a href="#origins">Where the idea started</a></li>
+      <li><a href="#inside">What the test actually checks</a></li>
+      <li><a href="#prep">Getting an honest result</a></li>
+      <li><a href="#score">Making sense of your score</a></li>
+      <li><a href="#myths">Common myths</a></li>
+      <li><a href="#questions">Questions people ask</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="two-ages">The Two Ages You Carry</h2>
+
+  <p>Everyone has a number they write on forms. That is your <strong>chronological age</strong>, and it goes up by exactly one every year whether you like it or not. But there is a second age that doesn't follow the calendar. It shows up in how you spend a free Saturday, how you handle an argument, whether you save or splurge, and how you feel about change.</p>
+
+  <p>That second age is what people mean by <strong>mental age</strong>. It doesn't measure how smart you are. It describes which age group your way of thinking and acting most resembles.</p>
+
+  <blockquote>Two people born on the same day can live as if they were fifteen years apart, and both can be perfectly healthy and happy.</blockquote>
+
+  <p>A <strong>mental age test</strong> is simply a structured way to estimate that second number. Instead of guessing, you answer a set of questions about everyday situations, and your answers are compared with patterns that are typical at different life stages.</p>
+
+  <h2 id="signs">Signs Your Mind Runs Younger or Older</h2>
+
+  <p>Before taking any test, it helps to notice the clues already in your life. Neither column below is a problem. They are just different ways of moving through the world.</p>
+
+  <div class="split">
+    <div class="col y">
+      <h3>A younger-running mind</h3>
+      <ul>
+        <li>Gets excited by new apps, trends and ideas</li>
+        <li>Decides quickly and adjusts later</li>
+        <li>Enjoys spontaneous plans</li>
+        <li>Finds routines a little boring</li>
+        <li>Laughs easily, even at silly things</li>
+        <li>Puts off "adult" admin like paperwork</li>
+      </ul>
+    </div>
+    <div class="col o">
+      <h3>An older-running mind</h3>
+      <ul>
+        <li>Prefers familiar music, food and places</li>
+        <li>Thinks through consequences before acting</li>
+        <li>Likes plans made well in advance</li>
+        <li>Finds comfort in routine</li>
+        <li>Values a few deep friendships over many</li>
+        <li>Handles bills and deadlines early</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Most people find themselves in both columns. That mix is exactly why a proper test is more useful than a gut feeling: it weighs many small habits together instead of judging you on one.</p>
+
+  <h2 id="origins">Where the Idea of Mental Age Started</h2>
+
+  <p>Mental age was a scientific idea long before it became a quiz. Its story spans a few key moments:</p>
+
+  <div class="timeline">
+    <div class="item"><span class="yr">EARLY 1900s · FRANCE</span><p>Schools need a fair way to spot children who need extra learning support. Psychologists Alfred Binet and Théodore Simon are asked to help.</p></div>
+    <div class="item"><span class="yr">1905</span><p>Binet and Simon publish a scale of tasks arranged from easy to hard, such as naming objects, repeating digits and explaining simple ideas. Each task is linked to the age at which most children can pass it.</p></div>
+    <div class="item"><span class="yr">1910s</span><p>William Stern proposes dividing mental age by real age. Lewis Terman adapts the test in the United States and multiplies the result by 100. This is the birth of the "IQ".</p></div>
+    <div class="item"><span class="yr">LATER DECADES</span><p>Psychologists notice the formula fails for adults, whose reasoning doesn't keep growing every year. Modern IQ tests replace it with comparisons against people of the same age.</p></div>
+    <div class="item"><span class="yr">TODAY</span><p>"Mental age" lives on mainly as a popular way to describe how youthful or mature someone's outlook is, measured through lifestyle quizzes.</p></div>
+  </div>
+
+  <p>The original ratio looked like this:</p>
+
+  <div class="eq">Ratio IQ = Mental Age ÷ Real Age × 100</div>
+
+  <p>A 6-year-old performing like a typical 9-year-old would have scored 150 on that old scale. The formula is mostly historical now, but it explains why "mental age" and "IQ" are so often mentioned together.</p>
+
+  <h2 id="inside">What a Modern Mental Age Test Actually Checks</h2>
+
+  <p>A well-designed online test doesn't quiz you on maths or vocabulary. It looks at the parts of daily life that tend to change as people grow older:</p>
+
+  <ul class="check">
+    <li><strong>Patience:</strong> can you wait for something better, or do you want it now?</li>
+    <li><strong>Reactions:</strong> do you respond to stress with a flash of emotion or a slow, measured response?</li>
+    <li><strong>Priorities:</strong> what matters most right now: fun, security, growth or family?</li>
+    <li><strong>Social style:</strong> do you recharge in a crowd or in quiet?</li>
+    <li><strong>Attitude to change:</strong> is something new exciting or tiring?</li>
+    <li><strong>Responsibility:</strong> how do you handle money, chores and commitments?</li>
+    <li><strong>Taste:</strong> which music, humour and entertainment pull you in?</li>
+  </ul>
+
+  <p>Each answer leans toward a certain age range. The test adds those leanings together and returns the age that best matches your overall pattern.</p>
+
+  <div class="action">
+    <h3>Curious where you land?</h3>
+    <p>A short set of everyday questions. Free, private and instant.</p>
+    <a href="https://mentalagecheck.com/">Check your mental age now</a>
+  </div>
+
+  <h2 id="prep">How to Get an Honest Result</h2>
+
+  <p>The biggest reason people get a strange result is that they answer as their ideal self. These habits help the test see the real you:</p>
+
+  <ol>
+    <li><strong>Picture last week, not your best week.</strong> Base each answer on what you actually did recently.</li>
+    <li><strong>Skip the "right" answer.</strong> No option is correct. The more mature-sounding choice isn't worth extra points.</li>
+    <li><strong>Answer quickly.</strong> Your first reaction is usually the truest one.</li>
+    <li><strong>Pick a calm moment.</strong> Being stressed, tired or overexcited can tilt your answers.</li>
+    <li><strong>Compare over time.</strong> Take it again in a month. If the result holds, it's meaningful. If it jumps around, look at which questions changed.</li>
+  </ol>
+
+  <h2 id="score">Making Sense of Your Score</h2>
+
+  <p>Once you have a number, compare it with your real age. The size of the gap matters more than the number itself.</p>
+
+  <div class="band b1">
+    <span class="lbl">Five or more years younger</span>
+    <h3>The explorer</h3>
+    <p>You bring energy, curiosity and flexibility. People enjoy your company because you keep things light. To balance it, choose one area, such as savings, sleep or follow-through, and give it a little more structure.</p>
+  </div>
+  <div class="band b2">
+    <span class="lbl">Within about five years</span>
+    <h3>The balanced mind</h3>
+    <p>Your outlook fits your stage of life. You can enjoy new things without losing your footing, which is a solid place to be.</p>
+  </div>
+  <div class="band b3">
+    <span class="lbl">Five or more years older</span>
+    <h3>The anchor</h3>
+    <p>You are dependable, thoughtful and calm under pressure. Friends often come to you for advice. To balance it, make room for play, try something unfamiliar, and let a plan be imperfect.</p>
+  </div>
+
+  <p>Whatever your band, the useful part isn't the label. It's spotting one or two habits you would like to keep and one or two you might want to adjust.</p>
+
+  <h2 id="myths">Common Myths About Mental Age Tests</h2>
+
+  <div class="myth">
+    <div class="m"><b>Myth</b>A younger mental age means you are immature.</div>
+    <div class="f"><b>Reality</b>It usually signals curiosity and openness. Maturity is about specific behaviours, not one number.</div>
+  </div>
+  <div class="myth">
+    <div class="m"><b>Myth</b>An online mental age test tells you your IQ.</div>
+    <div class="f"><b>Reality</b>Lifestyle tests measure habits and outlook. IQ requires a separate, standardised cognitive assessment.</div>
+  </div>
+  <div class="myth">
+    <div class="m"><b>Myth</b>Your mental age is fixed for life.</div>
+    <div class="f"><b>Reality</b>Habits change, and so does your result. New jobs, relationships and experiences often shift it.</div>
+  </div>
+  <div class="myth">
+    <div class="m"><b>Myth</b>The result can diagnose a condition.</div>
+    <div class="f"><b>Reality</b>It can't. If you have concerns about development, learning or mental health, speak to a qualified professional.</div>
+  </div>
+
+  <h2 id="questions">Questions People Often Ask</h2>
+
+  <div class="qa">
+    <details open>
+      <summary>How long does a mental age test take?</summary>
+      <div class="ans">Most online versions take between two and ten minutes. Clinical assessments are much longer and are done in person.</div>
+    </details>
+    <details>
+      <summary>Is it normal for my mental age to be very different from my real age?</summary>
+      <div class="ans">Yes. Gaps of several years in either direction are common and usually just reflect personality and lifestyle.</div>
+    </details>
+    <details>
+      <summary>Why do different tests give me different results?</summary>
+      <div class="ans">Each test uses its own questions and its own idea of what is "typical" at each age. Focus on the overall direction rather than the exact number.</div>
+    </details>
+    <details>
+      <summary>Can teenagers and older adults take the test?</summary>
+      <div class="ans">Yes. Lifestyle-based tests work across age groups because they compare habits, not school knowledge.</div>
+    </details>
+    <details>
+      <summary>Will my answers be stored?</summary>
+      <div class="ans">That depends on the site. Look for a test that runs instantly with no sign-up, so you aren't handing over personal details.</div>
+    </details>
+  </div>
+
+  <h2>The Bottom Line</h2>
+
+  <p>Your birthday is a fact. Your mental age is a reflection, a way to notice how you actually live compared with the people around you. Taken honestly and lightly, a mental age test can start useful conversations with friends, partners or yourself about what you want to keep and what you want to grow into.</p>
+
+  <div class="action">
+    <h3>Find the age of your mind</h3>
+    <p>No account, no waiting. Just answer and see.</p>
+    <a href="https://mentalagecheck.com/">Take the free mental age test</a>
+  </div>
+
+  <p class="fine">This guide is for general information and self-reflection only. It is not a psychological, medical or educational assessment.</p>
+
+</article>
+</main>
+</div>
+
+</body>
+</html>
